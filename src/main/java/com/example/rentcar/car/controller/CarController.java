@@ -10,36 +10,36 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
-//
-//@RestController
-//@RequestMapping("cars")
-//@RequiredArgsConstructor
+
+@RestController
+@RequestMapping("cars")
+@RequiredArgsConstructor
 public class CarController {
-//    private final CarService carService;
-//
-//    @PostMapping
-//    public void createCar(@RequestBody CarCreateDto carCreateDto) {
-//        carService.create(carCreateDto);
-//    }
-//
-//    @GetMapping
-//    public List<CarResponseDto> getCars() {
-//        return carService.getUsers();
-//    }
-//
-//    @GetMapping("/{id}")
-//    public UserResponseDto getCar(@PathVariable("id") UUID id) {
-//        return carService.getCar();
-//    }
-//
-//    @PutMapping("/{id}")
-//    public void updateCar(@PathVariable("id") UUID id, @RequestBody CarUpdateDto carUpdateDto) {
-//        carService.update(id, carUpdateDto);
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public void deleteCar(@PathVariable("id") UUID id) {
-//        carService.delete(id);
-//    }
+    private final CarService carService;
+
+    @PostMapping
+    public CarResponseDto createCar(@RequestBody CarCreateDto carCreateDto) {
+        return carService.create(carCreateDto);
+    }
+
+    @GetMapping
+    public List<CarResponseDto> getCars() {
+        return carService.getCars();
+    }
+
+    @GetMapping("/{id}")
+    public CarResponseDto getCar(@PathVariable("id") UUID id) {
+        return carService.getCar(id);
+    }
+
+    @PutMapping("/{id}")
+    public CarResponseDto updateCar(@PathVariable("id") UUID id, @RequestBody CarUpdateDto carUpdateDto) {
+        return carService.update(id, carUpdateDto);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteCar(@PathVariable("id") UUID id) {
+        carService.delete(id);
+    }
 
 }

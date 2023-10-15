@@ -12,10 +12,8 @@ public class CarBaseDto {
 
     private String model;
     private int year;
-    private double price;
     private String color;
     private String carNumber;
     private Boolean isSpoiled;
-    private LocalDateTime dateSubmitted;
-    private LocalDateTime dateReceived;
+    private double dailRentalPrice;
 }

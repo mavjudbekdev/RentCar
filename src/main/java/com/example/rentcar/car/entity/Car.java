@@ -1,5 +1,6 @@
 package com.example.rentcar.car.entity;
 
+import com.example.rentcar.rentalCar.entity.RentalRecord;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -20,12 +21,10 @@ public class Car {
     private UUID id;
     private String model;
     private int year;
-    private double price;
     private String color;
     private String carNumber;
     private Boolean isSpoiled;
-    private LocalDateTime dateSubmitted;
-    private LocalDateTime dateReceived;
+    private double dailRentalPrice;
 
 
 }

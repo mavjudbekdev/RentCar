@@ -9,6 +9,5 @@ import lombok.*;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class UserCreateDto extends UserBaseDto {
-
     private String password;
 }
